@@ -5,7 +5,27 @@
 
     <StackLayout>
         <Button Text="To Product" Clicked="ToProduct" WidthRequest="40" HeightRequest="125"/>
-        
+        <Entry x:Name="NameField" Placeholder="Enter name"/>
+        <Entry x:Name="ArticleField" Placeholder="Enter Article"/>
+        <Editor x:Name="TitleField" Placeholder="Enter Title" HeightRequest="100" />
+        <Entry x:Name="CategoryField" Placeholder="Enter Category"/>
+        <Entry x:Name="WeightField" Placeholder="Enter Weight"/>
+        <Button Text  ="Add product" Clicked="AddProductClicked"/>
+        <CollectionView x:Name="productsCollection">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Image Source="{Binding Image}"/>
+                        <Label Text="{Binding Name}"/>
+                        <Label Text="{Binding Article}"/>
+                        <Label Text="{Binding Title}"/>
+                        <Label Text="{Binding Category}"/>
+                        <Label Text="{Binding Weight}"/>
+                        
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </StackLayout>
 
 </ContentPage>
