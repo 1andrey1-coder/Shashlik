@@ -5,23 +5,47 @@
 
     <StackLayout>
         <Button Text="To Product" Clicked="ToProduct" WidthRequest="40" HeightRequest="125"/>
-        <Entry x:Name="NameField" Placeholder="Enter name"/>
-        <Entry x:Name="ArticleField" Placeholder="Enter Article"/>
-        <Editor x:Name="TitleField" Placeholder="Enter Title" HeightRequest="100" />
-        <Entry x:Name="CategoryField" Placeholder="Enter Category"/>
-        <Entry x:Name="WeightField" Placeholder="Enter Weight"/>
-        <Button Text  ="Add product" Clicked="AddProductClicked"/>
+        
         <CollectionView x:Name="productsCollection">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout>
-                        <Image Source="{Binding Image}"/>
-                        <Label Text="{Binding Name}"/>
-                        <Label Text="{Binding Article}"/>
-                        <Label Text="{Binding Title}"/>
-                        <Label Text="{Binding Category}"/>
-                        <Label Text="{Binding Weight}"/>
-                        
+                    <StackLayout Padding="13" >
+                        <StackLayout BackgroundColor ="#e39a07" Padding ="15">
+                       
+                        <Image Source="{Binding Image}" HeightRequest="365" Aspect="AspectFill" />
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Имя: " FontAttributes="Bold" FontSize="15"/>
+                                <Label Text="{Binding Name}" HorizontalOptions="Start"/>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Артикль: " FontAttributes="Bold" FontSize="15"/>
+                                <Label Text="{Binding Article}" HorizontalOptions="Start"/>
+                            </StackLayout>
+
+                            <StackLayout >
+                                <Label Text="Описание: " FontAttributes="Bold" FontSize="15"/>
+                                <Label Text="{Binding Title}" HorizontalOptions="Start"/>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Категория: " FontAttributes="Bold" FontSize="15"/>
+                                <Label Text="{Binding Category}" HorizontalOptions="Start"/>
+                            </StackLayout>
+                            
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Вес: " FontAttributes="Bold" FontSize="15"/>
+                                <Label Text="{Binding Weight}" HorizontalOptions="Start"  FontSize="15"/>
+                            </StackLayout>
+                            
+
+                            <StackLayout Orientation="Horizontal" >
+                                <Button Text="Редактирование"  Clicked="EditingProduct" BackgroundColor="#ffffff" />
+                                <Button Text="Удалить" Clicked="DeleteProduct" WidthRequest="150" BackgroundColor="#ffffff"/>
+                           
+                            </StackLayout>
+                        </StackLayout>
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

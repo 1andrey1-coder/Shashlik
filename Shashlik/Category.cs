@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Shashlik
 {
-     class Category
-    {
-        public string Name { get; set; }
-        public string CatProduct { get; set; }
-    }
+            public class Category
+        {
+             public string Name { get; set; }
+             public string CatProduct { get; set; }
+        }
 }

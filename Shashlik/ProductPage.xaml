@@ -2,18 +2,19 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Shashlik.ProductPage">
-    <ContentPage.Content>
-        <ScrollView>
-        <StackLayout>
-                
-                <Label Text="ProductPage"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Label Text="Product"/>
+
+    <ScrollView>
+        <StackLayout x:Name="productsCollection">
             <Button Text="Назад" Clicked="Nazad" VerticalOptions="Start"/>
-            <Entry IsPassword="True" />
-            
+            <Entry x:Name="NameField" Placeholder="Enter name"/>
+            <Entry x:Name="ArticleField" Placeholder="Enter Article"/>
+            <Editor x:Name="TitleField" Placeholder="Enter Title" HeightRequest="100" />
+            <Editor x:Name="ImageField" Placeholder="Enter Image"  />
+            <Entry x:Name="CategoryField" Placeholder="Enter Category"/>
+            <Entry x:Name="WeightField" Placeholder="Enter Weight"/>
+            <Button Text  ="Add product" Clicked="AddProductClicked"/>
+
         </StackLayout>
-        </ScrollView>
-    </ContentPage.Content>
+    </ScrollView>
+
 </ContentPage>

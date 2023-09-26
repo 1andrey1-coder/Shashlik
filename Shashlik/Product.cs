@@ -4,7 +4,7 @@ namespace Shashlik
 {
      public class Product
     {
-        [PrimaryKey, AutoIncrement]
+        [PrimaryKey, AutoIncrement]//уникальный индефикатор только для id  
         public int Id { get; set; } 
         public string Article { get; set; }
         public string Name { get; set; }
