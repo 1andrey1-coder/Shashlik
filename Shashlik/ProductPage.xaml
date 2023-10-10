@@ -4,15 +4,35 @@
              x:Class="Shashlik.ProductPage">
 
     <ScrollView>
-        <StackLayout x:Name="productsCollection">
-            <Button Text="Назад" Clicked="Nazad" VerticalOptions="Start"/>
-            <Entry x:Name="NameField" Placeholder="Enter name"/>
-            <Entry x:Name="ArticleField" Placeholder="Enter Article"/>
-            <Editor x:Name="TitleField" Placeholder="Enter Title" HeightRequest="100" />
-            <Editor x:Name="ImageField" Placeholder="Enter Image"  />
-            <Entry x:Name="CategoryField" Placeholder="Enter Category"/>
-            <Entry x:Name="WeightField" Placeholder="Enter Weight"/>
-            <Button Text  ="Add product" Clicked="AddProductClicked"/>
+        <StackLayout x:Name="ProductsCollection">
+            <Button Text="Назад" Clicked="Nazad" VerticalOptions="Start" 
+                    BackgroundColor="#208a76" BorderColor="#134459" BorderWidth="2"/>
+            
+            <Label Text="Название" Margin="4" FontAttributes="Bold"/>
+            <Entry x:Name="NameField" Text="{Binding Name}" />
+
+            <Label Text="Артикль" Margin="4" FontAttributes="Bold"/>
+            <Entry x:Name="ArticleField" Text="{Binding Article}"/>
+
+            <Label Text="Описание" Margin="4" FontAttributes="Bold"/>
+            <Editor x:Name="TitleField" Text="{Binding Title}" HeightRequest="100" />
+
+            <Label Text="Сcылка на изображение" Margin="4" FontAttributes="Bold"/>
+            <Editor x:Name="ImageField" Text="{Binding Image}" Placeholder="https://..."  />
+
+            <Label Text="Категория" Margin="4" FontAttributes="Bold"/>
+            <Entry x:Name="CategoryField" Text="{Binding Category}"/>
+            <!--
+            
+             <Entry x:Name="CategoryField" />
+            <Picker Title="Выбор категории" ItemsSource="{Binding Cathegory}" />-->
+
+            <Label Text="Вес" Margin="4" FontAttributes="Bold"/>
+            <Entry x:Name="WeightField"/>
+            <Button Text="Удалить" Clicked="DeleteFriend" />
+            <Button Text="Сохранить" Clicked="SaveFriend" />
+            <Button Text="Подтвердять добавление" Clicked="AddProductClicked"
+                     BackgroundColor="#e39a07" BorderColor="Black" BorderWidth="2"/>
 
         </StackLayout>
     </ScrollView>

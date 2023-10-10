@@ -23,24 +23,20 @@ namespace Shashlik
 
         private void ShowProducts()//Отображать все записи из конкретной коллекции
         {
-            productsCollection.ItemsSource = App.Db.GetProducts();
+            ProductList.ItemsSource = App.Db.GetProducts();
         }
 
         private async void ToProduct(object sender, EventArgs e)
         {
              await Navigation.PushModalAsync(new ProductPage());//переход по кнопке навигация
         }
-        
-        private async void DeleteProduct(object sender, EventArgs e)
-        {
-            //var remove = App.Db.GetProducts().Find(DeleteProduct(new Product()));
-            //var selectedProduct = (Product)productsCollection.SelectedItem;
-        }
-       
 
-        private void EditingProduct(object sender, EventArgs e)
+        private async void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-
+            Product selectedFriend = (Product)e.SelectedItem;
+            ProductPage friendPage = new ProductPage();
+            friendPage.BindingContext = selectedFriend;
+            await Navigation.PushModalAsync(friendPage);
         }
     }
 }
