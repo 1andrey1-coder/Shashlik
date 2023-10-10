@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using SQLite;
 using Xamarin.Forms;
 
+
 namespace Shashlik
 {
     public partial class MainPage : ContentPage
