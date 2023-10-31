@@ -35,6 +35,7 @@ namespace Shashlik
             string title = TitleField.Text.Trim();
             string category = CategoryField.Text.Trim();
             string weight = WeightField.Text.Trim();
+            //провекра
             if (name.Length < 2)
             {
                 await DisplayAlert("Ошибка", "Name min 2", "OK");
@@ -96,9 +97,6 @@ namespace Shashlik
             App.Db.DeleteProduct2(product.id);
             this.Navigation.PopModalAsync();
         }
-
-      
-
 
 
         private void SaveFriend(object sender, EventArgs e)
