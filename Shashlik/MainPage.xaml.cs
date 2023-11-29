@@ -22,6 +22,7 @@ namespace Shashlik
             ShowProducts();
         }
 
+
         private void ShowProducts()//Отображать все записи из конкретной коллекции
         {
             ProductList.ItemsSource = App.Db.GetProducts();
